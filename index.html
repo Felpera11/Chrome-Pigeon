@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Pigeon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+        }
+
+        canvas {
+            margin-top: 10%;
+            background-color: white;
+        }
+
+        .leaderboard {
+            color: white;
+            position: absolute;
+            margin: 0;
+            right: 1vw;
+            top: 16%;
+            display: flex;
+            justify-content: center;
+            width: calc(98vw - calc(50vw + 500px));
+            border: 1px solid white;
+            height: 50%;
+            overflow: hidden;
+            gap: 0;
+        }
+
+        #leaderboard {
+            margin-top: 10px;
+        }
+
+        .input {
+            position: absolute;
+            bottom: 140px;
+            opacity: 0;
+
+            transition: opacity 0.8s ease-out, bottom 0.8s ease-out;
+        }
+
+        .show{
+            opacity: 1;
+            position: absolute;
+            bottom: 115px;  
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            line-height: 0.2rem;
+            margin-top: 45px;
+        }
+
+        .row {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            max-height: 40px;
+            justify-content: space-between;
+            column-gap: 5vw;
+        }
+
+        input{
+            border-radius: 25px;
+            border: 1px solid white;
+            background-color: black;
+            color: rgb(207, 207, 207);
+            height: 40px;
+            width: 280px;
+            font-size: 22px;
+            padding-left: 15px;
+        }
+
+        button{
+            border-radius: 5px;
+            border: 1px solid white;
+            background-color: black;
+            color: rgb(207, 207, 207);
+            width: 70px;
+            height: 46px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="300"></canvas>
+
+    <div class="leaderboard">
+        <h1 id="leaderboard">Leaderboard</h1>
+    </div>
+
+
+    <div class="input" id="inputDiv">
+        <input type="text" name="form" id="nome" height="60" width="300" placeholder="Enter your name  (max.14)">
+        <button id="btn" onclick="saveScore()">Submit</button>
+    </div>
+</body>
+
+<script src="controller.js"></script>
+<script src="math.js"></script>
+<script src="entities.js"></script>
+<script src="engine.js"></script>
+
+</html>
